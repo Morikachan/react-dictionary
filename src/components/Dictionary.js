@@ -15,7 +15,6 @@ function Dictionary() {
 
   function search(event) {
     event.preventDefault();
-    console.log(keyword);
     apiHundle();
   }
 
@@ -24,21 +23,23 @@ function Dictionary() {
   }
 
   function handleResponse(response) {
-    console.log(response.data[0]);
     setResults(response.data[0]);
   }
 
   return (
     <div className="Dictionary">
       <div className="container mt-3">
-        <Form onSubmit={search}>
-          <Form.Control
-            type="search"
-            autoFocus={true}
-            placeholder="Search for a word"
-            onChange={handleKeywordChange}
-          />
-        </Form>
+        <section>
+          <label>What word do you want to look up?</label>
+          <Form onSubmit={search}>
+            <Form.Control
+              type="search"
+              autoFocus={true}
+              placeholder="Search for a word"
+              onChange={handleKeywordChange}
+            />
+          </Form>
+        </section>
         <Results results={results} />
       </div>
     </div>

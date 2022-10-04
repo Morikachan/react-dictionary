@@ -5,9 +5,9 @@ import Dictionary from "./components/Dictionary";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="container">
         <Dictionary />
-      </header>
+      </div>
     </div>
   );
 }

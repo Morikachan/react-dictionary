@@ -1,30 +1,27 @@
 import React from "react";
 import Meaning from "./Meaning";
 import Phonetic from "./Phonetic";
+import Photos from "./Photos";
 import "./Results.css";
 
-export default function Results({ results }) {
-  console.log(results);
-  if (results) {
+export default function Results({ definition, photos }) {
+  if (definition) {
     return (
       <div className="Results">
         <section>
-          <h1>{results.word}</h1>
-          {results.phonetics.map((phonetic, index) => {
-            return (
-              <div>
-                <Phonetic phonetic={phonetic} key={index} />
-              </div>
-            );
+          <h1>{definition.word}</h1>
+          {definition.phonetics.map((phonetic, index) => {
+            return <Phonetic phonetic={phonetic} key={index} />;
           })}
         </section>
-        {results.meanings.map((meaning, index) => {
+        {definition.meanings.map((meaning, index) => {
           return (
             <section key={index}>
               <Meaning meaning={meaning} />
             </section>
           );
         })}
+        <Photos photos={photos} />
       </div>
     );
   } else {

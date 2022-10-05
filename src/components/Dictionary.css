@@ -27,6 +27,10 @@
 }
 
 .Dictionary .form-control:focus {
-  border-color: #fcbfff;
-  box-shadow: 0 0 0 0.25rem rgba(255, 100, 255, 0.25);
+  border-color: rgba(255, 100, 255, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(255, 100, 255, 0.1);
+}
+
+.Dictionary .error {
+  font-size: 22px;
 }

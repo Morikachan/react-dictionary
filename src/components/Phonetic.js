@@ -2,7 +2,6 @@ import React from "react";
 import "./Phonetic.css";
 
 export default function Phonetics({ phonetic }) {
-  console.log(phonetic);
   if (phonetic) {
     return (
       <div className="Phonetic">

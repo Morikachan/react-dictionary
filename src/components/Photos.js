@@ -9,7 +9,7 @@ export default function Photos({ photos }) {
           {photos.map((photo) => {
             return (
               <div
-                className="col-md-4 col-sm-6 d-flex align-self-center"
+                className="col-lg-4 col-sm-6 d-flex align-self-center"
                 key={photo.id}
               >
                 <a

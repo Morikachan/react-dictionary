@@ -6,9 +6,13 @@ export default function Synonyms({ synonyms }) {
     return (
       <div className="Synonyms">
         <strong>Synonyms: </strong>
-        <ul className="mt-3">
+        <ul className="mt-3 d-flex flex-wrap">
           {synonyms.map((synonym, index) => {
-            return <li key={index}>{synonym}</li>;
+            return (
+              <li className="mb-2 me-2" key={index}>
+                {synonym}
+              </li>
+            );
           })}
         </ul>
       </div>

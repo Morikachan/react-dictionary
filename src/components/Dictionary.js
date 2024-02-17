@@ -4,6 +4,7 @@ import "./Dictionary.css";
 import Results from "./Results";
 import Footer from "./Footer";
 import Form from "react-bootstrap/Form";
+import { createClient } from 'pexels';
 
 function Dictionary() {
   const [keyword, setKeyword] = useState("");
@@ -37,11 +38,9 @@ function Dictionary() {
 
   function handleResponse(response) {
     setDefinition(response.data[0]);
-    let apiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=12`;
-    let apiKey = "563492ad6f91700001000001271447b8eb5f4f2e803c59313256eb8a";
-    axios
-      .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
-      .then(handleImages);
+    const client  = createClient("563492ad6f91700001000001271447b8eb5f4f2e803c59313256eb8a");
+    const query = response.data[0].word;
+    client.photos.search({ query, per_page: 12 }).then(handleImages);
   }
 
   function handleImages(response) {

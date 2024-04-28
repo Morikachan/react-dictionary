@@ -44,7 +44,7 @@ function Dictionary() {
   }
 
   function handleImages(response) {
-    setPhotos(response.data.photos);
+    setPhotos(response.photos);
   }
 
   return (
